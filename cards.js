@@ -10,7 +10,17 @@ fav_music:{
 },
 };
 
-
+const USER2 = {
+    id: 2,
+    username: "User Name 2",
+    description: "lorem ipsum",
+    age: "46",
+    fav_music:{
+        bands: ["Band 1","Band 2","Band 3","Band 4"],
+    },
+    };
+    
+//Crear la primera tarjeta
 //Selectores
 const card = document.getElementById("card-container");
 const cardImgContainer = document.getElementById ("card-img-container");
@@ -33,12 +43,51 @@ cardAgeElement.textContent = USER.age;
 cardDescElement.textContent = USER.description;
 
 //Poblar cardFavMusic
-cardFavMusic.textContent = USER.fav_music.bands.forEach ((band) => {
+USER.fav_music.bands.forEach(band => {
     const bandElement = document.createElement("li");
     bandElement.textContent = band;
-    cardFavMusic
-})
+    cardFavMusic.appendChild(bandElement);
+});
+
 
 //Renderizar = mostrarlos en pantalla
 cardImgContainer.appendChild(imageElement);
-card.append(cardTitleElement, cardAgeElement, cardDescElement);
+card.append(cardTitleElement, cardAgeElement, cardDescElement, cardFavMusic);
+
+
+////////////////////
+
+
+    
+    //Selectores
+    const card2 = document.getElementById("card-container2");
+    const cardImgContainer2 = document.getElementById ("card-img-container2");
+    
+    // Crear ELEMENTO img
+    const imageElement2 = document.createElement("img");
+    imageElement2.src = IMAGE_URL;
+    imageElement2.alt = "User profile photo";
+    
+    //Creamos elemento título -> card
+    const cardTitleElement2 = document.createElement("h3");
+    cardTitleElement.classList.add("card-title");
+    const cardAgeElement2 = document.createElement("p");
+    const cardDescElement2 = document.createElement("p");
+    const cardFavMusic2 = document.createElement("ul");
+    
+    //Poblar
+    cardTitleElement2.textContent = USER2.username;
+    cardAgeElement2.textContent = USER2.age;
+    cardDescElement2.textContent = USER2.description;
+    
+    //Poblar cardFavMusic
+    USER.fav_music.bands.forEach(band => {
+        const bandElement = document.createElement("li");
+        bandElement.textContent = band;
+        cardFavMusic2.appendChild(bandElement);
+    });
+    
+    
+    //Renderizar = mostrarlos en pantalla
+    cardImgContainer2.appendChild(imageElement2);
+    card2.append(cardTitleElement2, cardAgeElement2, cardDescElement2, cardFavMusic2);
