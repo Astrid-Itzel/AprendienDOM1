@@ -12,13 +12,23 @@ fav_music:{
 
 const USER2 = {
     id: 2,
-    username: "User Name 2",
-    description: "lorem ipsum",
-    age: "46",
+    username: "User Lastname",
+    description: "lorem lorem lorem",
+    age: "23",
     fav_music:{
         bands: ["Band 1","Band 2","Band 3","Band 4"],
     },
     };
+
+    const USER3 = {
+        id: 3,
+        username: "User Name 2",
+        description: "lorem ipsum",
+        age: "46",
+        fav_music:{
+            bands: ["Band 1","Band 2","Band 3","Band 4"],
+        },
+        };
     
 //Crear la primera tarjeta
 //Selectores
@@ -81,7 +91,7 @@ card.append(cardTitleElement, cardAgeElement, cardDescElement, cardFavMusic);
     cardDescElement2.textContent = USER2.description;
     
     //Poblar cardFavMusic
-    USER.fav_music.bands.forEach(band => {
+    USER2.fav_music.bands.forEach(band => {
         const bandElement = document.createElement("li");
         bandElement.textContent = band;
         cardFavMusic2.appendChild(bandElement);
@@ -91,3 +101,39 @@ card.append(cardTitleElement, cardAgeElement, cardDescElement, cardFavMusic);
     //Renderizar = mostrarlos en pantalla
     cardImgContainer2.appendChild(imageElement2);
     card2.append(cardTitleElement2, cardAgeElement2, cardDescElement2, cardFavMusic2);
+
+    /////////////////////////////
+
+       
+    //Selectores
+    const card3 = document.getElementById("card-container3");
+    const cardImgContainer3 = document.getElementById ("card-img-container3");
+    
+    // Crear ELEMENTO img
+    const imageElement3 = document.createElement("img");
+    imageElement3.src = IMAGE_URL;
+    imageElement3.alt = "User profile photo";
+    
+    //Creamos elemento título -> card
+    const cardTitleElement3 = document.createElement("h3");
+    cardTitleElement.classList.add("card-title");
+    const cardAgeElement3 = document.createElement("p");
+    const cardDescElement3 = document.createElement("p");
+    const cardFavMusic3 = document.createElement("ul");
+    
+    //Poblar
+    cardTitleElement3.textContent = USER2.username;
+    cardAgeElement3.textContent = USER2.age;
+    cardDescElement3.textContent = USER2.description;
+    
+    //Poblar cardFavMusic
+    USER3.fav_music.bands.forEach(band => {
+        const bandElement = document.createElement("li");
+        bandElement.textContent = band;
+        cardFavMusic3.appendChild(bandElement);
+    });
+    
+    
+    //Renderizar = mostrarlos en pantalla
+    cardImgContainer3.appendChild(imageElement3);
+    card3.append(cardTitleElement3, cardAgeElement3, cardDescElement3, cardFavMusic3);

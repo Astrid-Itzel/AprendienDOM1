@@ -18,7 +18,7 @@ textInput.addEventListener("input", (e) => {
 })
 //datos caracteres individuales/ value , el texto completo que se introcuce
 
-const p2 = document.getElementById("p2");//p1 es solo el nombre que estoy asignando a la variable
+const p2 = document.getElementById("p2");
 const h2list2 = document.getElementsByClassName("subtitle");
 const textInput2 = document.getElementById("username-input2");
 
@@ -28,3 +28,15 @@ const elementB = document.querySelector(".subtitle"); // . para clase
 console.log(p2);
 console.log(h2list2);
 console.log(textInput2);
+
+
+const p3 = document.getElementById("p3");
+const h2list3 = document.getElementsByClassName("subtitle");
+const textInput3 = document.getElementById("username-input3");
+
+const elementA3 = document.querySelector("#p3"); // # para id
+const elementB3 = document.querySelector(".subtitle"); // . para clase
+
+console.log(p3);
+console.log(h2list3);
+console.log(textInput3);
